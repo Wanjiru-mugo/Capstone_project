@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pet_insurance.apps.Pet_insuranceConfig', 
+
 ]
 
 MIDDLEWARE = [
