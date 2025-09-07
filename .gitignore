@@ -1,0 +1,14 @@
+"""temp files from Django created during runtime
+   ignore files with .pyc extension
+   ignore static folder
+"""
+__pycache__/
+*.pyc 
+media/
+static/
+
+#vironment variables
+.env
+
+#virtual environment
+venv/
