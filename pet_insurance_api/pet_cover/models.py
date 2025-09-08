@@ -27,6 +27,9 @@ class Plan(models.Model):
     copay = models.IntegerField()
     vet_clinic = models.ManyToManyField(VetClinic, related_name='plans')
 
+    def __str__(self):
+        return f"Type of plan: {self.name}\n Cover provider: {self.insurance_company}\n Premium: KES{self.premium}\n Deductible: KES{self.deductible}\n Annual limit: KES{self.annual_limit}\n Waiting period: {self.waiting_period}months\n Copay: KES{self.copay}\n Vet clinics: {self.vet_clinic}"
+
 class Benefit(models.Model):
     name = models.TextField()
     description = models.TextField()
