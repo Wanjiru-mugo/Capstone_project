@@ -4,6 +4,8 @@ from .models import InsuranceCompany, VetClinic, Benefit, Plan, ExclusiveOf
 from .serializers import InsuranceCompanySerializer, BenefitSerializer, VetClinicSerializer, ExclusiveOfSerializer, PlanSerializer
 from .permissions import IsAdminOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class InsuranceCompanyViewSet(viewsets.ModelViewSet):
@@ -35,3 +37,11 @@ class VetClinicViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [filters.SearchFilter]
     search_fields = ['address', 'name']
+
+class LogoutView(APIView):
+    permission_classes = IsAuthenticated
+
+    def post(self, request):
+        request.user.auth_token.delete()
+
+        return Response({'message': 'Successfully loggedout!'})
