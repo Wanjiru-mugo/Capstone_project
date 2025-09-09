@@ -43,3 +43,11 @@ Customise admin interface models:
     VetClinic - filter and search by address and name
     ExclusiveOf - fiiter by name
 
+**SETUP SERIALIZERS FOR MODELS**
+**InsuranceCompanySerializer**: a representation of each insurance company including their related plans.
+**PlanSerializer**: a representation of each plan, including nested representation of related benefits, exclusions, and vetclinic service. 
+    **Custome Validation Value**:
+        For data integrity, a 400Error will be raised should the premium value be greater than the annual limit. 
+**BenefitSerializer**: a representation of each benefit and its description
+**ExclusiveOfSerializer**: a representation of each exclusion and its description
+**VetClinicSerializer**: a representation of each vet clinic, its location, and contact phone
