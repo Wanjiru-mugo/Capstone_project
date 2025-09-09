@@ -42,8 +42,6 @@ class PlanSerializer(serializers.ModelSerializer):
             
 class InsuranceCompanySerializer(serializers.ModelSerializer):
 
-    #return related plans
-    plans = PlanSerializer(many=True, read_only=True)
     class Meta:
         model = InsuranceCompany
         fields = ['name', 'description', 'contact_email']

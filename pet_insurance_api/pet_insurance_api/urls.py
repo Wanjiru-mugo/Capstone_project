@@ -22,16 +22,15 @@ from pet_cover.models import InsuranceCompany, Benefit, VetClinic, Plan, Exclusi
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = DefaultRouter()
-router.register(r'InsuranceCompany', InsuranceCompanyViewSet)
-router.register(r'Benefit', BenefitViewSet)
-router.register(r'Plan', PlanViewSet)
-router.register(r'VetClinic', VetClinicViewSet)
-router.register(r'ExclusiveOf', ExclusiveOfViewSet)
+router.register(r'insurance_companies', InsuranceCompanyViewSet, basename='insurance_company')
+router.register(r'benefits', BenefitViewSet, basename='benefit')
+router.register(r'plans', PlanViewSet, basename='plan')
+router.register(r'vet_clinics', VetClinicViewSet, basename='vet_clinic')
+router.register(r'exclusive_of', ExclusiveOfViewSet, basename='exclusive_of')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth'),
 ]
