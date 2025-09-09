@@ -29,8 +29,9 @@ router.register(r'VetClinic', VetClinicViewSet)
 router.register(r'ExclusiveOf', ExclusiveOfViewSet)
 
 urlpatterns = [
-    path('pet_api/admin/', admin.site.urls),
-    path('pet_api/', include(router.urls)),
-    path('pet_api-auth/', include('rest_framework.urls')),
-    path('pet_api/token/', obtain_auth_token, name='api_token_auth'),
+    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/token/', obtain_auth_token, name='api_token_auth'),
 ]
