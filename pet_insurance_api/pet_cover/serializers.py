@@ -34,7 +34,11 @@ class PlanSerializer(serializers.ModelSerializer):
 
         if premium is not None and annual_limit is not None:
             if premium >= annual_limit:
-                raise serializers.ValidationError("Premium must be less than the annual limit!")
+                raise serializers.ValidationError(
+                    {"premium": ['Premium value must be less than annual limit'],
+                     'annual_limit': ['Annual limit must be greater than the premium value paid']
+                     }
+                )
             
 class InsuranceCompanySerializer(serializers.ModelSerializer):
 
