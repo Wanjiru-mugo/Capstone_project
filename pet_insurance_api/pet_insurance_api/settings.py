@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pet_cover.apps.Pet_coverConfig',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

@@ -19,9 +19,9 @@ class VetClinicSerializer(serializers.ModelSerializer):
 class PlanSerializer(serializers.ModelSerializer):
 
     #return plan API with related benefits, exclusions, vetservice
-    benefits = BenefitSerializer(many=True, read_only=True)
-    exclusions = ExclusiveOfSerializer(many=True, read_only=True)
-    vetservice = VetClinicSerializer(many=True, read_only=True)
+    #benefits = BenefitSerializer(many=True, read_only=True)
+    #exclusions = ExclusiveOfSerializer(many=True, read_only=True)
+    #vetservice = VetClinicSerializer(many=True, read_only=True)
 
     class Meta:
         model = Plan
