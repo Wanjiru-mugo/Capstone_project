@@ -1,5 +1,5 @@
 # Capstone_project
-The Pet Insurance API
+The Pet Insurance API - http://127.0.0.1:8000/
 
 **Project Objective:**
 This is a backend API that helps Kenyan pet owners conviniently find the right pet insurance by providing details on cover plans, benefits, deductibles, premium costs, and vetrinary provider networks in the Kenyan market. 
@@ -11,14 +11,14 @@ This is a backend API that helps Kenyan pet owners conviniently find the right p
 -MySQL
 
 **DEVELOPMENT WORKFLOW**
-1. Intialised Django project - pet_insurance_api
+1. Initialised Django project - pet_insurance_api
 2. Created a feature branch for the next development phase - database-models
-3. Intialised/created Django app - pet_cover
+3. Initialised/created Django app - pet_cover
 
 **DATABASE MODELS & SAMPLE DATA**
 Created 5 models:
     1. InsuranceCompany - stores info on insurance providers
-        Takes attributes - name, contact_email, decsription
+        Takes attributes - name, contact_email, description
     2. Plan - stores info about a specific insurance plan
         Takes attributes - name, insurance_company, premium, deductible, copay, waiting_period, annual_limit, vet_clinic
     3. Benefit - stores the benefits of a plan
