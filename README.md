@@ -51,3 +51,11 @@ Customise admin interface models:
 **BenefitSerializer**: a representation of each benefit and its description
 **ExclusiveOfSerializer**: a representation of each exclusion and its description
 **VetClinicSerializer**: a representation of each vet clinic, its location, and contact phone
+
+**STATIC FILES**
+The following files were compiled in the static directory:
+    scripts.js
+    styles.css
+    base.html
+
+
