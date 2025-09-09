@@ -23,11 +23,11 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 
 router = DefaultRouter()
-router.register(r'insurance_companies', InsuranceCompanyViewSet, basename='insurance_company')
+router.register(r'insurance_companies', InsuranceCompanyViewSet, basename='insurancecompany')
 router.register(r'benefits', BenefitViewSet, basename='benefit')
 router.register(r'plans', PlanViewSet, basename='plan')
-router.register(r'vet_clinics', VetClinicViewSet, basename='vet_clinic')
-router.register(r'exclusive_of', ExclusiveOfViewSet, basename='exclusive_of')
+router.register(r'vet_clinics', VetClinicViewSet, basename='vetclinic')
+router.register(r'exclusive_of', ExclusiveOfViewSet, basename='exclusiveof')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,22 +1,22 @@
 from rest_framework import serializers
 from .models import InsuranceCompany, Benefit, Plan, ExclusiveOf, VetClinic
 
-class BenefitSerializer(serializers.ModelSerializer):
+class BenefitSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Benefit
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'url', 'name', 'description']
 
-class ExclusiveOfSerializer(serializers.ModelSerializer):
+class ExclusiveOfSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ExclusiveOf
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'url', 'name', 'description']
 
-class VetClinicSerializer(serializers.ModelSerializer):
+class VetClinicSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = VetClinic
-        fields = ['id', 'name', 'address', 'contact_phone']
+        fields = ['id', 'url', 'name', 'address', 'contact_phone']
 
-class PlanSerializer(serializers.ModelSerializer):
+class PlanSerializer(serializers.HyperlinkedModelSerializer):
 
     #return plan API with related benefits, exclusions, vetservice
     #benefits = BenefitSerializer(many=True, read_only=True)
@@ -25,7 +25,7 @@ class PlanSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Plan
-        fields = ['id', 'name', 'insurance_company', 'premium', 'deductible', 'annual_limit', 'waiting_period', 'copay', 'vet_clinic']
+        fields = ['id', 'url', 'name', 'insurance_company', 'premium', 'deductible', 'annual_limit', 'waiting_period', 'copay', 'vet_clinic']
 
     def validate(self, data):
         #premium value should be less that annual_limit
@@ -40,8 +40,8 @@ class PlanSerializer(serializers.ModelSerializer):
                      }
                 )
             
-class InsuranceCompanySerializer(serializers.ModelSerializer):
+class InsuranceCompanySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = InsuranceCompany
-        fields = ['id', 'name', 'description', 'contact_email']
+        fields = ['id', 'url', 'name', 'description', 'contact_email']
