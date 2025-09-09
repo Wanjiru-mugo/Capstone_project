@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pet_cover.views import InsuranceCompanyViewSet, BenefitViewSet, PlanViewSet, VetClinicViewSet, ExclusiveOfViewSet
+from pet_cover.views import LogoutView, InsuranceCompanyViewSet, BenefitViewSet, PlanViewSet, VetClinicViewSet, ExclusiveOfViewSet
 from rest_framework.routers import DefaultRouter
 from pet_cover.models import InsuranceCompany, Benefit, VetClinic, Plan, ExclusiveOf
 from rest_framework.authtoken.views import obtain_auth_token
+
 
 router = DefaultRouter()
 router.register(r'insurance_companies', InsuranceCompanyViewSet, basename='insurance_company')
