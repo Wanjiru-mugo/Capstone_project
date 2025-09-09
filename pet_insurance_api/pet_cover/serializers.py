@@ -4,17 +4,17 @@ from .models import InsuranceCompany, Benefit, Plan, ExclusiveOf, VetClinic
 class BenefitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Benefit
-        fields = ['name', 'description']
+        fields = ['id', 'name', 'description']
 
 class ExclusiveOfSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExclusiveOf
-        fields = ['name', 'description']
+        fields = ['id', 'name', 'description']
 
 class VetClinicSerializer(serializers.ModelSerializer):
     class Meta:
         model = VetClinic
-        fields = ['name', 'address', 'contact_phone']
+        fields = ['id', 'name', 'address', 'contact_phone']
 
 class PlanSerializer(serializers.ModelSerializer):
 
@@ -25,7 +25,7 @@ class PlanSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Plan
-        fields = ['name', 'insurance_company', 'premium', 'deductible', 'annual_limit', 'waiting_period', 'copay', 'vet_clinic']
+        fields = ['id', 'name', 'insurance_company', 'premium', 'deductible', 'annual_limit', 'waiting_period', 'copay', 'vet_clinic']
 
     def validate(self, data):
         #premium value should be less that annual_limit
@@ -44,4 +44,4 @@ class InsuranceCompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = InsuranceCompany
-        fields = ['name', 'description', 'contact_email']
+        fields = ['id', 'name', 'description', 'contact_email']
