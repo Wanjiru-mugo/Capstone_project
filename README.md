@@ -29,4 +29,17 @@ Model Relationships Definition:
         a plan can have many exclusions while a single exclusion can belong to many plans; 
         a plan can be associated with many vet clinics and a vet clinin can offer many plans
     
-Benefits, exclusions, vet clinics data was created from the Django shell.
+Benefits, exclusions, vet clinics data were created from the Django shell.
+
+**SET UP ADMIN INTERFACE**
+Admin interface set up with details:
+    email - wanjirumugo@gmail.com
+    username - Wanjiru
+    password - 123456
+Data seeding from admin interface
+Customise admin interface models:
+    Plan - filter by insurance company
+    Benefit - filter and search by name
+    VetClinic - filter and search by address and name
+    ExclusiveOf - fiiter by name
+
